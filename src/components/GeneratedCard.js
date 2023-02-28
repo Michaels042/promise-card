@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import DownloadShareModal from './DownloadShareModal';
+import { Link } from 'react-router-dom';
+import PromiseCard from './PromiseCard';
 
 const GeneratedCard = ({cardInfo}) => {
   const [openModal, setOpenModal] = useState(false)
@@ -30,14 +32,23 @@ const GeneratedCard = ({cardInfo}) => {
           />
         ))}
       </div>
+      <div className="create-link">
+        <Link onClick={PromiseCard}>
+          <p>Create your own Promisecard.com.ng</p>
+        </Link>
+
+      </div>
+     
 
       <div className="share">
-        <div className="socialShare">
-          <button onClick={() => setOpenModal(true)}>Share with friends</button>
+        <div  onClick={() => setOpenModal(true)} className="socialShare">
+          <button>Share with friends</button>
         </div>
-        <div className="gen-btn createCard">
-          <button onClick={() => setOpenModal(true)}>Create new card</button>
-        </div>
+        <Link onClick={PromiseCard}>
+          <div className="createCard" onClick={PromiseCard}>
+              <button>Create new card</button>
+          </div>
+        </Link>
         <DownloadShareModal open={openModal} onClose={() => setOpenModal(false)} />
       </div>
     </div>

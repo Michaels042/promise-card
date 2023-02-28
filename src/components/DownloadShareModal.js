@@ -11,7 +11,7 @@ const DownloadShare = ({ open, onClose }) => {
     <div onClick={onClose} className="overlay">
       <div onClick={(e) => {
         e.stopPropagation()
-      }} className="modalContainer">
+      }} className="modalwrapper">
         <div>
           <p onClick={onClose} className="closeBtn">
             X

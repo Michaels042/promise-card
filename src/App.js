@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import PromiseCard from "./components/PromiseCard";
 import UserInfo from "./components/UserInfo";
 import GeneratedCard from "./components/GeneratedCard";
-
 import "./App.css";
 
 function App() {
