@@ -24,7 +24,10 @@ z-index: 1;
 height: 690px;
 width: 400px;
 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 56.86%, rgba(0, 0, 0, 0.5) 100%);
-
+}
+.subTitle span {
+  width : 20.3px;
+  height : 20.3px;
 }
 
 .card h2 {

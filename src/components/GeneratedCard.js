@@ -15,8 +15,10 @@ const GeneratedCard = ({cardInfo}) => {
         <span
           style={{
             backgroundColor: "#fff",
-            borderRadius: "100%",
-            padding: "5px 10px",
+            borderRadius: "50%",
+            width: "20.4px",
+            height: "20.4px",
+            padding: "4px 11px",
           }}
         >
           {cardInfo.text.length}
