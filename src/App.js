@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   let [color, setColor] = useState({
-    activeColor: "yellow",
+    activeColor: "pink",
   });
 
   let [cardInfo, setCardInfo] = useState({

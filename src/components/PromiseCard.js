@@ -74,7 +74,7 @@ const PromiseCard = ({setColor, activeColor, setCardInfo, setCardToDisplay}) => 
         <button onClick={generate}>Generate your card</button>
       </div>
       <p className="footer">
-        Powered by &hearts;<strong>unboxed</strong>
+          Powered by<span className="heart">&hearts;</span><strong>unboxd</strong>
       </p>
     </div>
   );

@@ -7,9 +7,10 @@ const GeneratedCard = ({cardInfo}) => {
   const [openModal, setOpenModal] = useState(false)
 
   return (
+    <div>
     <div className={`card`}>
       <h2>{cardInfo.name + `'s`} Promise Card</h2>
-      <p>
+      <p className="subTitle">
         Things I want{" "}
         <span
           style={{
@@ -32,14 +33,13 @@ const GeneratedCard = ({cardInfo}) => {
           />
         ))}
       </div>
-      <div className="create-link">
-        <Link onClick={PromiseCard}>
+      <div className="linkWrap">
+        <Link  className="create-link" onClick={PromiseCard}>
           <p>Create your own Promisecard.com.ng</p>
         </Link>
 
       </div>
      
-
       <div className="share">
         <div  onClick={() => setOpenModal(true)} className="socialShare">
           <button>Share with friends</button>
@@ -49,9 +49,11 @@ const GeneratedCard = ({cardInfo}) => {
               <button>Create new card</button>
           </div>
         </Link>
-        <DownloadShareModal open={openModal} onClose={() => setOpenModal(false)} />
       </div>
     </div>
+      <DownloadShareModal open={openModal} onClose={() => setOpenModal(false)} />
+  </div>
+
   );
 }
 
