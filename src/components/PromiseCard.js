@@ -46,7 +46,6 @@ const PromiseCard = ({setColor, activeColor, setCardInfo, setCardToDisplay}) => 
                 generatedcard: false
               })
         }
-
     }
 
   return (

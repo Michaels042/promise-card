@@ -15,7 +15,7 @@ position: relative;
 margin: auto;
 text-align: center;
 }
-.card {
+.card, .shareCard {
 position: absolute;
 top: 0;
 left: 0;
@@ -324,5 +324,10 @@ width: 32px;
 .share-btn p {
   font-weight: 400;
   font-size: 12px;
+  }
+  #generatedScreen {
+    padding: 20px;
+    margin: 20px;
+    /* background-color: #FEDF58; */
   }
 

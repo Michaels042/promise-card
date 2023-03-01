@@ -3,38 +3,47 @@ import DownloadShareModal from './DownloadShareModal';
 import { Link } from 'react-router-dom';
 import PromiseCard from './PromiseCard';
 
-const GeneratedCard = ({cardInfo}) => {
+const GeneratedCard = ({cardInfo, color}) => {
   const [openModal, setOpenModal] = useState(false)
+  console.log(color.activeColor);
 
   return (
     <div>
-    <div className={`card`} id={`generatedScreen`}>
-      <h2>{cardInfo.name + `'s`} Promise Card</h2>
-      <p className="subTitle">
-        Things I want{" "}
-        <span
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: "50%",
-            width: "20.4px",
-            height: "20.4px",
-            padding: "4px 11px",
-          }}
-        >
-          {cardInfo.text.length}
-        </span>
-      </p>
-      <div className="form-input">
-        {cardInfo.text.map((item, index) => (
-          <input
-            key={index}
-            type="text"
-            name="text1"
-            placeholder="write item name"
-            value={item.value}
-          />
-        ))}
+    <div className={`card`}>
+      <div id={`generatedScreen`}
+       style={{
+        backgroundColor: `${color.activeColor}`,
+       
+      }} 
+       >
+          <h2>{cardInfo.name + `'s`} Promise Card</h2>
+          <p className="subTitle">
+            Things I want{" "}
+            <span
+              style={{
+                backgroundColor: "#fff",
+                borderRadius: "50%",
+                width: "20.4px",
+                height: "20.4px",
+                padding: "4px 11px",
+              }}
+            >
+              {cardInfo.text.length}
+            </span>
+          </p>
+          <div className="form-input">
+            {cardInfo.text.map((item, index) => (
+              <input
+                key={index}
+                type="text"
+                name="text1"
+                placeholder="write item name"
+                value={item.value}
+              />
+            ))}
+        </div>
       </div>
+      
       <div className="linkWrap">
         <Link  className="create-link" onClick={PromiseCard}>
           <p>Create your own Promisecard.com.ng</p>
