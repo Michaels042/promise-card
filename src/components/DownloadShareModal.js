@@ -9,7 +9,7 @@ const DownloadShare = ({ open, onClose }) => {
     
   // SHARE BUTTON
   const shareOnTwitter = () => {
-    const link = "https://michaels042.github.io/Deo-Gracias-Blog/";
+    const link = "https://mywishlists.netlify.app/";
     const msg = encodeURIComponent("An awesome promise card");
     const title = encodeURIComponent(document.querySelector("title").textContent);
     console.log([link, msg, title]);
