@@ -8,7 +8,7 @@ const GeneratedCard = ({cardInfo}) => {
 
   return (
     <div>
-    <div className={`card`}>
+    <div className={`card`} id={`generatedScreen`}>
       <h2>{cardInfo.name + `'s`} Promise Card</h2>
       <p className="subTitle">
         Things I want{" "}
