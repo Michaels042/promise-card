@@ -4,6 +4,8 @@ import React from "react";
 // import twitter from '../images/twitter.svg';
 // import download from '../images/download.svg';
 import { FacebookShareButton, FacebookIcon } from "react-share";
+import { WhatsappShareButton, WhatsappIcon } from "react-share";
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
 const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
@@ -53,6 +55,24 @@ const DownloadShare = ({ open, onClose }) => {
                   <FacebookIcon size={32} round />
               </FacebookShareButton>
               <p>Facebook</p>
+            </span>
+            <span>
+              <WhatsappShareButton
+                url={'https://mywishlists.netlify.app/'}
+                quote={'An awesome promise card'}
+                hashtag={"#mywishlist"}>
+                  <WhatsappIcon size={32} round />
+              </WhatsappShareButton>
+              <p>Whatsapp</p>
+            </span>
+            <span>
+              <TwitterShareButton
+                url={'https://mywishlists.netlify.app/'}
+                quote={'An awesome promise card'}
+                hashtag={"#mywishlist"}>
+                  <TwitterIcon size={32} round />
+              </TwitterShareButton>
+              <p>Twitter</p>
             </span>
 
           {/* <span className="twitter" onClick={download}>
