@@ -24,7 +24,6 @@ import html2canvas from 'html2canvas';
   });
 }
 
-// const PNG_FILE_URL = "https://mywishlists.netlify.app/file_png.png";
 const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
 

@@ -4,6 +4,8 @@ import PromiseCard from "./components/PromiseCard";
 import UserInfo from "./components/UserInfo";
 import GeneratedCard from "./components/GeneratedCard";
 import "./App.css";
+import ShareFile from "./components/ShareFile";
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   let [color, setColor] = useState({
@@ -31,7 +33,12 @@ function App() {
 
         {cardToDisplay.generatedcard && <GeneratedCard cardInfo={cardInfo}/>}
       </div>
-     
+      <div className="downloadFile">
+        <ShareFile/>
+      </div>
+        <Routes>
+            <Route path='/ShareFile' component={<ShareFile />} />
+        </Routes>
     </div>
   );
 }

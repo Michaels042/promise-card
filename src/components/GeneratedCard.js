@@ -41,9 +41,11 @@ const GeneratedCard = ({cardInfo}) => {
       </div>
      
       <div className="share">
+        
         <div  onClick={() => setOpenModal(true)} className="socialShare">
           <button>Share with friends</button>
         </div>
+       
         <Link onClick={PromiseCard}>
           <div className="createCard" onClick={PromiseCard}>
               <button>Create new card</button>
