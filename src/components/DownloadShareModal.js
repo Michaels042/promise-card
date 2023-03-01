@@ -1,21 +1,22 @@
 import React from "react";
-import whatsapp from '../images/whatsapp.svg';
-import facebook from '../images/facebook.svg';
-import twitter from '../images/twitter.svg';
-import download from '../images/download.svg';
+// import whatsapp from '../images/whatsapp.svg';
+// import facebook from '../images/facebook.svg';
+// import twitter from '../images/twitter.svg';
+// import download from '../images/download.svg';
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
     
   // SHARE BUTTON
-  const shareOnTwitter = () => {
-    const link = "https://mywishlists.netlify.app/";
-    const msg = encodeURIComponent("An awesome promise card");
-    const title = encodeURIComponent(document.querySelector("title").textContent);
-    console.log([link, msg, title]);
-    const twitter = document.querySelector(".twitter");
-    twitter.href = `https://twitter.com/share?url=${link}&text=${msg}&hastags=javascript,programming`;
-};
+//   const shareOnTwitter = () => {
+//     const link = "https://mywishlists.netlify.app/";
+//     const msg = encodeURIComponent("An awesome promise card");
+//     const title = encodeURIComponent(document.querySelector("title").textContent);
+//     console.log([link, msg, title]);
+//     const twitter = document.querySelector(".twitter");
+//     twitter.href = `https://twitter.com/share?url=${link}&text=${msg}&hastags=javascript,programming`;
+// };
 
   // const shareOnFacebook = () => {
   //     const facebook = document.querySelector(".facebook");
@@ -44,7 +45,17 @@ const DownloadShare = ({ open, onClose }) => {
         </div>
 
         <div className="share-btn">
-          <span className="twitter" onClick={download}>
+            <span>
+              <FacebookShareButton
+                url={'https://mywishlists.netlify.app/'}
+                quote={'An awesome promise card'}
+                hashtag={"#mywishlist"}>
+                  <FacebookIcon size={32} round />
+              </FacebookShareButton>
+              <p>Facebook</p>
+            </span>
+
+          {/* <span className="twitter" onClick={download}>
             <img src={download} alt="save file icon" />
             <p>Save image</p>
           </span>
@@ -59,7 +70,7 @@ const DownloadShare = ({ open, onClose }) => {
           <span className="twitter" onClick={shareOnTwitter}>
             <img src={twitter} alt="twitter icon" />
             <p>Twitter</p>
-          </span>
+          </span> */}
         </div>
       </div>
     </div>
