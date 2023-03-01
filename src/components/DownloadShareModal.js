@@ -29,7 +29,7 @@ const DownloadShare = ({ open, onClose }) => {
   if (!open) return null;
 
   const handleCaptureClick = async () => {
-    const imageCardDownload = document.getElementById(`genCard`);
+    const imageCardDownload = document.getElementById(`generatedScreen`);
     if (!imageCardDownload) return;
 
     const canvas = await html2canvas(imageCardDownload);
