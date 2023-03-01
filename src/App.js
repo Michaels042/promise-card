@@ -31,9 +31,6 @@ function App() {
 
         {cardToDisplay.generatedcard && <GeneratedCard cardInfo={cardInfo} color={color}/>}
       </div>
-      <div className="downloadFile">
-      </div>
-       
     </div>
   );
 }

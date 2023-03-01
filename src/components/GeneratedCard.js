@@ -5,7 +5,6 @@ import PromiseCard from './PromiseCard';
 
 const GeneratedCard = ({cardInfo, color}) => {
   const [openModal, setOpenModal] = useState(false)
-  console.log(color.activeColor);
 
   return (
     <div>
@@ -13,7 +12,6 @@ const GeneratedCard = ({cardInfo, color}) => {
       <div id={`generatedScreen`}
        style={{
         backgroundColor: `${color.activeColor}`,
-       
       }} 
        >
           <h2>{cardInfo.name + `'s`} Promise Card</h2>
