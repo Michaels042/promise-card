@@ -10,18 +10,18 @@
 }
 .app-content {
 width: 400px;
-height: 690px;
+height: 720px;
 position: relative;
 margin: auto;
 text-align: center;
 }
-.card, .shareCard {
+.card {
 position: absolute;
 top: 0;
 left: 0;
 padding: 30px;
 z-index: 1;
-height: 690px;
+height: 720px;
 width: 400px;
 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 56.86%, rgba(0, 0, 0, 0.5) 100%);
 }
@@ -96,6 +96,7 @@ width: 100%;
 
 .gen-btn {
 padding: 6px 0;
+margin-top: 30px;
 }
 .gen-btn button {
 background-color: #fff;
@@ -189,7 +190,7 @@ position: absolute;
 width: 400px;
 height: 120px;
 left: 0px;
-top: 570px;
+top: 600px;
 bottom: 0;
 background: #FFFFFF;
 border-radius: 16px 16px 0px 0px;
@@ -241,7 +242,7 @@ border: 1px solid #000;
     font-size: 13.5417px;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    top: 500px;
+    top: 555px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 21.6667px;
   }

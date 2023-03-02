@@ -12,6 +12,7 @@ const GeneratedCard = ({cardInfo, color}) => {
       <div id={`generatedScreen`}
        style={{
         backgroundColor: `${color.activeColor}`,
+        // background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 56.86%, rgba(0, 0, 0, 0.5) 100%)",
       }} 
        >
           <h2>{cardInfo.name + `'s`} Promise Card</h2>
