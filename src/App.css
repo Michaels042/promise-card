@@ -94,6 +94,16 @@ padding: 4px;
 width: 100%;
 }
 
+.cardInput {
+  height: 50px;
+  outline: none;
+  border: 1px solid black;
+  background-color: transparent;
+  /* margin-top: -1px; */
+  padding: 4px;
+  width: 100%;
+  }
+
 .gen-btn {
 padding: 6px 0;
 margin-top: 30px;
@@ -275,7 +285,7 @@ border-top-right-radius: 15px;
   width: 400px;
   height: 340px;
   position: absolute;
-  top: 350px;
+  top: 390px;
   position: relative;
   background-color: #fff;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
@@ -329,5 +339,7 @@ width: 32px;
   #generatedScreen {
     padding: 20px;
     margin: 20px;
+    height: 470px;
   }
 
+  

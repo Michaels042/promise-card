@@ -5,6 +5,7 @@ import PromiseCard from './PromiseCard';
 
 const GeneratedCard = ({cardInfo, color}) => {
   const [openModal, setOpenModal] = useState(false)
+  console.log("new",cardInfo);
 
   return (
     <div>
@@ -12,10 +13,9 @@ const GeneratedCard = ({cardInfo, color}) => {
       <div id={`generatedScreen`}
        style={{
         backgroundColor: `${color.activeColor}`,
-        // background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 56.86%, rgba(0, 0, 0, 0.5) 100%)",
       }} 
        >
-          <h2>{cardInfo.name + `'s`} Promise Card</h2>
+          <h2>{cardInfo.card.cardItems.name + `'s`} Promise Card</h2>
           <p className="subTitle">
             Things I want{" "}
             <span
@@ -27,17 +27,18 @@ const GeneratedCard = ({cardInfo, color}) => {
                 padding: "4px 11px",
               }}
             >
-              {cardInfo.text.length}
+              {cardInfo.card.cardItems.length}
             </span>
           </p>
           <div className="form-input">
-            {cardInfo.text.map((item, index) => (
+            {cardInfo.card.cardItems.map((item, index) => (
               <input
                 key={index}
                 type="text"
                 name="text1"
                 placeholder="write item name"
                 value={item.value}
+                onChange={(e)=>console.log(e)}
               />
             ))}
         </div>
@@ -65,7 +66,6 @@ const GeneratedCard = ({cardInfo, color}) => {
     </div>
       <DownloadShareModal open={openModal} onClose={() => setOpenModal(false)} />
   </div>
-
   );
 }
 

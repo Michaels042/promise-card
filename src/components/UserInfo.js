@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const UserInfo = ({setCardInfo, setCardToDisplay}) => {
+const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
 
     let [emptyText, setEmptyText] = useState(false)
 
@@ -12,8 +12,14 @@ const UserInfo = ({setCardInfo, setCardToDisplay}) => {
     const updateUserDetails = ({target:{name, value}}) => {
         setUserDetails((prev)=>({...prev, [name]:value}))
     }
-
-    let handleSubmit = () => {
+    const userData = {
+      name: userDetails.name,
+      email: userDetails.email,
+      color: color.activeColor,
+      cardItems: cardInfo.text
+    };
+    // console.log(userData);
+    let handleSubmit = async() => {
 
         if(userDetails.name === '' || userDetails.email === ''){
             setEmptyText(true);
@@ -21,11 +27,31 @@ const UserInfo = ({setCardInfo, setCardToDisplay}) => {
         }
         setEmptyText(false)
         setCardInfo((prev)=>({...prev, name:userDetails.name, email:userDetails.email}))
-        setCardToDisplay({
+        
+        try {
+          //resolves fetch promise
+          const res = await fetch("https://promise-card-api.onrender.com/api/create-card", {
+            method: "POST",
+            body: JSON.stringify(userData),
+            headers: {
+              "content-type": "application/json",
+            },
+          });
+          //resolves res.json()'s promise
+          const jsonResponse = await res.json();
+          setRes(jsonResponse);
+          setCardToDisplay({
             promiseCard: false,
             userInfo: false,
             generatedcard: true
         })
+          // previews response in the console
+          console.log(jsonResponse);
+        } catch (error) {
+          console.error(error);
+    
+        }
+        
     }
 
   return (

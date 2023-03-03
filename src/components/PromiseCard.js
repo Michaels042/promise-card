@@ -24,6 +24,8 @@ const PromiseCard = ({setColor, activeColor, setCardInfo, setCardToDisplay}) => 
     const handleTextChange = ({target:{name, value}}) => {
         settext((prev)=>({...prev, [name]:value}))
     }
+  
+   
 
     const generate = () => {
         let inputedtext = []
@@ -46,6 +48,7 @@ const PromiseCard = ({setColor, activeColor, setCardInfo, setCardToDisplay}) => 
                 generatedcard: false
               })
         }
+      
     }
 
   return (
