@@ -29,10 +29,10 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
-  }, []);
+  },);
   return (
     <div>
-         {response != "" ? 
+         {response !== "" ? 
          <div id={`generatedScreen`}
          style={{
           width: "400px",

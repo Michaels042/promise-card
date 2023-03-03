@@ -1,12 +1,12 @@
 
-import React, { useState } from "react";
+import React from "react";
 import download from "../images/download.svg";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-import Cards from "../Cards";
+// import Cards from "../Cards";
 
 
   function toDataURL(src) {
@@ -25,10 +25,11 @@ import Cards from "../Cards";
     image.onerror = () => reject("Could not load image");
   });
 }
+console.log(toDataURL());
 
 const DownloadShare = ({ open, onClose, cardInfo }) => {
-  const [cardDetails, setCardDetails] = useState("");
-  const [showCard, setShowCard] = useState(false);
+  // const [cardDetails, setCardDetails] = useState("");
+  // const [showCard, setShowCard] = useState(false);
 
   if (!open) return null;
 
@@ -42,7 +43,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
   };
 
   return (<>
-  {!showCard? 
+  
     <div onClick={onClose} className="overlay">
       <div
         onClick={(e) => {
@@ -103,9 +104,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
         </div>
       </div>
     </div>
-    :
-      <Cards cardDetails={cardDetails} />
-      }
+    
       </>
 
 
