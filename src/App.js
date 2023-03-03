@@ -37,10 +37,10 @@ function App() {
             {cardToDisplay.generatedcard && <GeneratedCard cardInfo={respond} color={color}/>}
           </div>
         </div>
-        }> 
-        </Route>
+         } /> 
+      
 
-        <Route path="/cards" element={<Cards cardInfo={respond} color={color}/>} />
+        <Route path="/cards/:cardId" element={<Cards />} />
     </Routes>
     </>
   );

@@ -3,7 +3,7 @@ import DownloadShareModal from './DownloadShareModal';
 import { Link } from 'react-router-dom';
 import PromiseCard from './PromiseCard';
 
-const GeneratedCard = ({cardInfo, color}) => {
+const GeneratedCard = ({ cardInfo, color }) => {
   const [openModal, setOpenModal] = useState(false)
   console.log("new",cardInfo);
 
@@ -15,7 +15,7 @@ const GeneratedCard = ({cardInfo, color}) => {
         backgroundColor: `${color.activeColor}`,
       }} 
        >
-          <h2>{cardInfo.card.cardItems.name + `'s`} Promise Card</h2>
+          <h2>{cardInfo.card.name + `'s`} Promise Card</h2>
           <p className="subTitle">
             Things I want{" "}
             <span
@@ -64,7 +64,7 @@ const GeneratedCard = ({cardInfo, color}) => {
         </Link>
       </div>
     </div>
-      <DownloadShareModal open={openModal} onClose={() => setOpenModal(false)} />
+      <DownloadShareModal  cardInfo={cardInfo} open={openModal} onClose={() => setOpenModal(false)} />
   </div>
   );
 }

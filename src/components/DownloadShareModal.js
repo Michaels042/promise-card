@@ -6,7 +6,7 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-import { useParams} from 'react-router-dom'
+// import { useParams} from 'react-router-dom'
 import Cards from "../Cards";
 
 
@@ -27,10 +27,12 @@ import Cards from "../Cards";
   });
 }
 
-const DownloadShare = ({ open, onClose }) => {
+const DownloadShare = ({ open, onClose, cardInfo }) => {
   const [cardDetails, setCardDetails] = useState("");
   const [showCard, setShowCard] = useState(false);
-    const { cardId } = useParams(); 
+    // const { cardId } = useParams(); 
+
+    // console.log(cardInfo.card._id);
 
   if (!open) return null;
 
@@ -48,26 +50,7 @@ const DownloadShare = ({ open, onClose }) => {
   // }, []);
 
 
-  const getCardData = async () => {
-    try {
-        //resolves fetch promise
-        const res = await fetch(`https://promise-card-api.onrender.com/api/get-card/`, {
-          method: "GET",
-          headers: {
-            "content-type": "application/json",
-          },
-        });
-        //resolves res.json()'s promise
-        const jsonData = await res.json();
-        setCardDetails(jsonData)
-    
-        // previews response in the console
-        console.log(jsonData);
-
-      } catch (error) {
-        console.error(error);
-      }
-    }
+  
     
   return (<>
   {!showCard? 
@@ -100,10 +83,10 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <FacebookShareButton
-              url={`"https://promise-card-8jnp.onrender.com/cards/"`}
+              url={`https://promise-card-8jnp.onrender.com/cards/`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
-              onClick={getCardData}
+              // onClick={getCardData}
             >
               <FacebookIcon size={32} round />
             </FacebookShareButton>
@@ -111,10 +94,10 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <WhatsappShareButton
-              url={`"https://promise-card-8jnp.onrender.com/cards/"`}
+              url={`https://promise-card-8jnp.onrender.com/cards/`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
-              onClick={getCardData}
+              // onClick={getCardData}
             >
               <WhatsappIcon size={32} round />
             </WhatsappShareButton>
@@ -122,10 +105,10 @@ const DownloadShare = ({ open, onClose }) => {
           </span>
           <span>
             <TwitterShareButton
-              url={`"https://promise-card-8jnp.onrender.com/cards/${cardId}"`}
+              url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
-              onClick={getCardData}
+              // onClick={getCardData}
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>
