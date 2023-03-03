@@ -6,7 +6,6 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-// import { useParams} from 'react-router-dom'
 import Cards from "../Cards";
 
 
@@ -30,9 +29,6 @@ import Cards from "../Cards";
 const DownloadShare = ({ open, onClose, cardInfo }) => {
   const [cardDetails, setCardDetails] = useState("");
   const [showCard, setShowCard] = useState(false);
-    // const { cardId } = useParams(); 
-
-    // console.log(cardInfo.card._id);
 
   if (!open) return null;
 
@@ -45,13 +41,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
     downloadjs(dataURL, "download.png", "image/png");
   };
 
-  // useEffect(() => {
-  
-  // }, []);
-
-
-  
-    
   return (<>
   {!showCard? 
     <div onClick={onClose} className="overlay">
@@ -86,7 +75,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
-              // onClick={getCardData}
             >
               <FacebookIcon size={32} round />
             </FacebookShareButton>
@@ -97,7 +85,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
-              // onClick={getCardData}
             >
               <WhatsappIcon size={32} round />
             </WhatsappShareButton>
@@ -108,7 +95,6 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
               url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
-              // onClick={getCardData}
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>

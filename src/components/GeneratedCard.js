@@ -5,7 +5,6 @@ import PromiseCard from './PromiseCard';
 
 const GeneratedCard = ({ cardInfo, color }) => {
   const [openModal, setOpenModal] = useState(false)
-  console.log("new",cardInfo);
 
   return (
     <div>

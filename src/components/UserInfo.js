@@ -18,7 +18,6 @@ const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
       color: color.activeColor,
       cardItems: cardInfo.text
     };
-    // console.log(userData);
     let handleSubmit = async() => {
 
         if(userDetails.name === '' || userDetails.email === ''){
@@ -39,6 +38,9 @@ const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
           });
           //resolves res.json()'s promise
           const jsonResponse = await res.json();
+          if (jsonResponse.status === "fail"){
+            return
+        }
           setRes(jsonResponse);
           setCardToDisplay({
             promiseCard: false,

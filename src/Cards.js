@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useParams} from 'react-router-dom'
 import "./App.css";
 
-// import { useParams } from "react-router-dom";
-
 const Cards = () => {
     const { cardId } = useParams(); 
     const [response, setResponse] = useState("");
-    // console.log( "crd", cardId);
 
     const getCardData = async () => {
         try {
@@ -20,16 +17,11 @@ const Cards = () => {
             });
             //resolves res.json()'s promise
             const jsonData = await res.json();
-            if (jsonData.status == "fail"){
+            if (jsonData.status === "fail"){
                 return
             }
-
-           
             setResponse(jsonData)
-        
             // previews response in the console
-            console.log("theresp",jsonData);
-
         } catch (error) {
             console.error(error);
         }
@@ -38,8 +30,6 @@ const Cards = () => {
         getCardData();
   
   }, []);
-
-
   return (
     <div>
          {response != "" ? 
