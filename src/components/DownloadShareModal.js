@@ -83,7 +83,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
           </span>
           <span>
             <FacebookShareButton
-              url={`https://promise-card-8jnp.onrender.com/cards/`}
+              url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
               // onClick={getCardData}
@@ -94,7 +94,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
           </span>
           <span>
             <WhatsappShareButton
-              url={`https://promise-card-8jnp.onrender.com/cards/`}
+              url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
               // onClick={getCardData}
