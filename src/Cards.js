@@ -37,7 +37,7 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
-  },[resp]);
+  },[cardId, resp]);
   return (
     <div>
          {resp &&
