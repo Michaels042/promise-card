@@ -38,9 +38,7 @@ function App() {
           </div>
         </div>
          } /> 
-      
-
-        <Route path="/cards/:cardId" element={<Cards />} />
+        <Route path="cards/:cardId" element={<Cards />} />
     </Routes>
     </>
   );
