@@ -74,6 +74,7 @@ const Cards = () => {
               ))}
           </div>
         </div>
+        
         //  : 
         //  <div style={{
         //     backgroundColor: "#fff",
@@ -85,6 +86,10 @@ const Cards = () => {
         //     <h3>No info found</h3>
         //  </div>
          }
+         {
+            !resp && <div>found an error</div>
+         }
+         
 
     </div>
   )
