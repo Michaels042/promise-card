@@ -87,7 +87,14 @@ const Cards = () => {
         //  </div>
          }
          {
-            !resp && <div>found an error</div>
+            !resp && <div style={{
+                    backgroundColor: "#fff",
+                    borderRadius: "10px",
+                    width: "280.4px",
+                    height: "40.4px",
+                    padding: "4px 11px",
+                  }}
+            >Found an Error</div>
          }
          
 
