@@ -21,6 +21,9 @@ const Cards = () => {
                 return
             }
             setResponse(jsonData)
+            console.log("jd",jsonData);
+            console.log("res",response);
+
             // previews response in the console
         } catch (error) {
             console.error(error);
@@ -29,7 +32,7 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
-  },[response, cardId]);
+  },[]);
   return (
     <div>
          {response !== "" ? 
