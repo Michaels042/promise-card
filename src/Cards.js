@@ -4,7 +4,8 @@ import "./App.css";
 
 const Cards = () => {
     const { cardId } = useParams(); 
-    const [response, setResponse] = useState("");
+    const [response, setResponse] = useState(null);
+    const [resp, setResp] = useState(false);
 
     const getCardData = async () => {
         try {
@@ -20,9 +21,13 @@ const Cards = () => {
             if (jsonData.status === "fail"){
                 return
             }
-            setResponse(jsonData)
+         setResponse(jsonData)
+         setResp(true);
+
             console.log("jd",jsonData);
             console.log("res",response);
+            console.log("new res",resp);
+
 
             // previews response in the console
         } catch (error) {
@@ -32,10 +37,10 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
-  },[]);
+  },[resp]);
   return (
     <div>
-         {response !== "" ? 
+         {resp &&
          <div id={`generatedScreen`}
          style={{
           width: "400px",
@@ -69,16 +74,16 @@ const Cards = () => {
               ))}
           </div>
         </div>
-         : 
-         <div style={{
-            backgroundColor: "#fff",
-            borderRadius: "10px",
-            width: "280.4px",
-            height: "40.4px",
-            padding: "4px 11px",
-          }}>
-            <h3>No info found</h3>
-         </div>
+        //  : 
+        //  <div style={{
+        //     backgroundColor: "#fff",
+        //     borderRadius: "10px",
+        //     width: "280.4px",
+        //     height: "40.4px",
+        //     padding: "4px 11px",
+        //   }}>
+        //     <h3>No info found</h3>
+        //  </div>
          }
 
     </div>
