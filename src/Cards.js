@@ -29,7 +29,7 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
-  },);
+  },[response, cardId]);
   return (
     <div>
          {response !== "" ? 
@@ -67,8 +67,14 @@ const Cards = () => {
           </div>
         </div>
          : 
-         <div>
-            <p>No info found</p>
+         <div style={{
+            backgroundColor: "#fff",
+            borderRadius: "10px",
+            width: "280.4px",
+            height: "40.4px",
+            padding: "4px 11px",
+          }}>
+            <h3>No info found</h3>
          </div>
          }
 
