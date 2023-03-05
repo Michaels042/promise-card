@@ -37,6 +37,7 @@ const Cards = () => {
      useEffect(() => {
         getCardData();
   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[cardId, resp]);
   return (
     <div>

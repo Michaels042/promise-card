@@ -25,7 +25,7 @@ import html2canvas from 'html2canvas';
     image.onerror = () => reject("Could not load image");
   });
 }
-// console.log(toDataURL());
+console.log(toDataURL());
 
 const DownloadShare = ({ open, onClose, cardInfo }) => {
   // const [cardDetails, setCardDetails] = useState("");
