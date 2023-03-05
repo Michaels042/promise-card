@@ -4,8 +4,7 @@ import "./App.css";
 
 const Cards = () => {
     const { cardId } = useParams(); 
-    const [response, setResponse] = useState(null);
-    const [resp, setResp] = useState(false);
+    const [response, setResponse] = useState("");
 
     const getCardData = async () => {
         try {
@@ -21,15 +20,10 @@ const Cards = () => {
             if (jsonData.status === "fail"){
                 return
             }
-         setResponse(jsonData)
-         setResp(true);
-
-            console.log("jd",jsonData);
-            console.log("res",response);
-            console.log("new res",resp);
-
-
+            setResponse(jsonData)
             // previews response in the console
+            console.log("theresp",jsonData);
+
         } catch (error) {
             console.error(error);
         }
@@ -38,10 +32,12 @@ const Cards = () => {
         getCardData();
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[cardId, resp]);
+  }, []);
+
+
   return (
     <div>
-         {resp &&
+         {response !== "" ? 
          <div id={`generatedScreen`}
          style={{
           width: "400px",
@@ -75,29 +71,18 @@ const Cards = () => {
               ))}
           </div>
         </div>
-        
-        //  : 
-        //  <div style={{
-        //     backgroundColor: "#fff",
-        //     borderRadius: "10px",
-        //     width: "280.4px",
-        //     height: "40.4px",
-        //     padding: "4px 11px",
-        //   }}>
-        //     <h3>No info found</h3>
-        //  </div>
+         : 
+         <div  style={{
+            backgroundColor: "#fff",
+            borderRadius: "10px",
+            width: "280.4px",
+            height: "40.4px",
+            padding: "4px 11px",
+          }}
+         >
+            <p>No info found</p>
+         </div>
          }
-         {
-            !resp && <div style={{
-                    backgroundColor: "#fff",
-                    borderRadius: "10px",
-                    width: "280.4px",
-                    height: "40.4px",
-                    padding: "4px 11px",
-                  }}
-            >Found an Error</div>
-         }
-         
 
     </div>
   )

@@ -6,8 +6,6 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-// import Cards from "../Cards";
-
 
   function toDataURL(src) {
   return new Promise((resolve, reject) => {
@@ -28,22 +26,16 @@ import html2canvas from 'html2canvas';
 console.log(toDataURL());
 
 const DownloadShare = ({ open, onClose, cardInfo }) => {
-  // const [cardDetails, setCardDetails] = useState("");
-  // const [showCard, setShowCard] = useState(false);
-
   if (!open) return null;
-
   const handleCaptureClick = async () => {
     const imageCardDownload = document.getElementById(`generatedScreen`);
     if (!imageCardDownload) return;
-
     const canvas = await html2canvas(imageCardDownload);
     const dataURL = canvas.toDataURL("image/png");
     downloadjs(dataURL, "download.png", "image/png");
   };
 
   return (<>
-  
     <div onClick={onClose} className="overlay">
       <div
         onClick={(e) => {
@@ -73,7 +65,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
           </span>
           <span>
             <FacebookShareButton
-              url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
+              url={`https://caard.netlify.app/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
             >
@@ -83,7 +75,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
           </span>
           <span>
             <WhatsappShareButton
-              url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
+              url={`https://caard.netlify.app/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
             >
@@ -93,7 +85,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
           </span>
           <span>
             <TwitterShareButton
-              url={`https://promise-card-8jnp.onrender.com/cards/${cardInfo.card._id}`}
+              url={`https://caard.netlify.app/cards/${cardInfo.card._id}`}
               quote={"An awesome promise card"}
               hashtag={"#mywishlist"}
             >
@@ -104,10 +96,7 @@ const DownloadShare = ({ open, onClose, cardInfo }) => {
         </div>
       </div>
     </div>
-    
       </>
-
-
   );
 };
 
