@@ -21,9 +21,10 @@ const GeneratedCard = ({ cardInfo, color }) => {
               style={{
                 backgroundColor: "#fff",
                 borderRadius: "50%",
-                width: "20.4px",
-                height: "20.4px",
-                padding: "4px 11px",
+                width: "24px",
+                height: "24px",
+                padding: "1px 7px",
+                marginLeft: "5px"
               }}
             >
               {cardInfo.card.cardItems.length}
@@ -41,6 +42,11 @@ const GeneratedCard = ({ cardInfo, color }) => {
               />
             ))}
         </div>
+        <div className="linkWrapImg">
+                  <Link to="https://caard.netlify.app"  className="create-link">
+                  <p>Create your own Promisecard.com.ng</p>
+                  </Link>
+              </div>
       </div>
       <div className="share">
         <div  onClick={() => setOpenModal(true)} className="socialShare">

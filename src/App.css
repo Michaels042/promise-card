@@ -237,10 +237,6 @@ border: 1px solid #000;
   border: 1px solid #fff;
   cursor: pointer;
   }
-  .linkWrap {
-    display: flex;
-    justify-content: center;
-  }
   .create-link{
     display: flex;
     align-items: center;
@@ -253,7 +249,7 @@ border: 1px solid #000;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     top: 555px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(124, 122, 122, 0.1);
     border-radius: 21.6667px;
   }
   .create-link:hover {
@@ -339,15 +335,17 @@ width: 32px;
   #generatedScreen {
     padding: 20px;
     margin: 20px;
-    height: 500px;
+    height: 560px;
   }
   .caards{
     display: flex;
     justify-content: center;
   }
   .caardsContent{
-    width: 390px;
-    height: 550px;
+    width: 395px;
+    height: 560px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 56.86%, rgba(0, 0, 0, 0.5) 100%);
+
   }
   .caardsContent h2, p{
     display: flex;
@@ -361,5 +359,23 @@ width: 32px;
     padding: 1px 7px;
     margin-left: 5px;
   }
- 
+  .linkWrap {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-left: 11.5%;
+    top: -40px;
+  }
+  .linkWrap .create-link{
+    background: rgba(228, 226, 226, 0.1);
+  }
+  .linkWrapImg{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-left: 8.5%;
+    top: -10px;
+
+  }
+
   

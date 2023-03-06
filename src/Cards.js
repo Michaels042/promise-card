@@ -69,17 +69,20 @@ const Cards = () => {
             <div className="form-input">
               
               {response.cardItems.map((item, index) => (
-                  
+                  <>
                   <div key={index} className="cardInput">
                       {item.value}
                   </div>
+                 
+              </>
               ))}
+               <div className="linkWrap">
+                  <Link to="https://caard.netlify.app"  className="create-link">
+                  <p>Create your own Promisecard.com.ng</p>
+                  </Link>
+              </div>
+               
           </div>
-          <div className="linkWrap">
-        <Link to="https://caard.netlify.app"  className="create-link">
-          <p>Create your own Promisecard.com.ng</p>
-        </Link>
-      </div>
         </div>
          : 
          <div  style={{
