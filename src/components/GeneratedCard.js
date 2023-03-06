@@ -41,12 +41,13 @@ const GeneratedCard = ({ cardInfo, color }) => {
                 onChange={(e)=>console.log(e)}
               />
             ))}
-        </div>
-        <div className="linkWrapImg">
+            <div className="linkWrapImg">
             <Link to="https://caard.netlify.app"  className="create-link">
             <p>Create your own Promisecard.com.ng</p>
             </Link>
         </div>
+        </div>
+        
       </div>
       <div className="share">
         <div  onClick={() => setOpenModal(true)} className="socialShare">

@@ -200,7 +200,7 @@ position: absolute;
 width: 400px;
 height: 120px;
 left: 0px;
-top: 580px;
+top: 595px;
 bottom: 0;
 background: #FFFFFF;
 border-radius: 16px 16px 0px 0px;
@@ -333,9 +333,10 @@ width: 32px;
   font-size: 12px;
   }
   #generatedScreen {
-    padding: 20px;
+    padding: 10px 20px;
     margin: 20px;
     height: 560px;
+    /* width: 400px; */
   }
   .caards{
     display: flex;
@@ -362,9 +363,9 @@ width: 32px;
   .linkWrap {
     display: flex;
     justify-content: center;
-    position: fixed;
+    /* position: fixed;
     margin-left: 11.5%;
-    top: -40px;
+    top: -40px; */
   }
   .linkWrap .create-link{
     background: rgba(228, 226, 226, 0.1);
@@ -372,10 +373,8 @@ width: 32px;
   .linkWrapImg{
     display: flex;
     justify-content: center;
-    position: fixed;
-    margin-left: 8.5%;
-    top: -10px;
+    /* position: relative; */
+    /* margin-left: 5.5%; */
+    /* margin-bottom: 40px; */
 
   }
-
-  
