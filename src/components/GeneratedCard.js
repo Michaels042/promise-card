@@ -42,20 +42,10 @@ const GeneratedCard = ({ cardInfo, color }) => {
             ))}
         </div>
       </div>
-      
-      <div className="linkWrap">
-        <Link  className="create-link" onClick={PromiseCard}>
-          <p>Create your own Promisecard.com.ng</p>
-        </Link>
-
-      </div>
-     
       <div className="share">
-        
         <div  onClick={() => setOpenModal(true)} className="socialShare">
           <button>Share with friends</button>
         </div>
-       
         <Link onClick={PromiseCard}>
           <div className="createCard" onClick={PromiseCard}>
               <button>Create new card</button>

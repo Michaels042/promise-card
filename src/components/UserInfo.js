@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import MoonLoader from 'react-spinners/MoonLoader';
 
 const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
+const [isLoading, setIsLoading] = useState(false);
 
     let [emptyText, setEmptyText] = useState(false)
-
     let [userDetails, setUserDetails] = useState({
         name: '',
         email: ''
@@ -19,7 +20,6 @@ const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
       cardItems: cardInfo.text
     };
     let handleSubmit = async() => {
-
         if(userDetails.name === '' || userDetails.email === ''){
             setEmptyText(true);
             return
@@ -28,6 +28,8 @@ const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
         setCardInfo((prev)=>({...prev, name:userDetails.name, email:userDetails.email}))
         
         try {
+          setIsLoading(true);
+
           //resolves fetch promise
           const res = await fetch("https://promise-card-api.onrender.com/api/create-card", {
             method: "POST",
@@ -47,34 +49,49 @@ const UserInfo = ({setCardInfo, setCardToDisplay, color, cardInfo, setRes}) => {
             userInfo: false,
             generatedcard: true
         })
+        setIsLoading(false)
           // previews response in the console
           console.log(jsonResponse);
         } catch (error) {
+          setIsLoading(false)
           console.error(error);
-    
         }
-        
     }
 
   return (
-    <div className={`user-info`}>
-      <h2>Your promise card <br/>is almost ready</h2>
-      <div className="form-input">
-        <div className='input-group'>
-            <label>Full name</label>
-            <input type='text' name='name' placeholder='eg. Peter Obi' value={userDetails.name} required={true} onChange={updateUserDetails} />
-        </div>
-
-        <div className='input-group'>
-            <label>Email address</label>
-            <input type='email' name='email' placeholder='Peter@gmail.com' value={userDetails.email} required={true} onChange={updateUserDetails} />
-        </div>
+    <>
+      {isLoading ?
+      <div  style={{
+        display: "flex",
+        justifyContent: "center",
+        position: "relative",
+        top: "40%"
+      }} 
+      >
+         <MoonLoader color="#808080" /> 
       </div>
-      {emptyText && <p className="err-msg">Name/Email can't be empty</p>}
-      <div className="gen-btn">
-        <button onClick={handleSubmit} className='submit-btn'>Submit</button>
-      </div>
-    </div>
+         :
+         <div className={`user-info`}>
+            <h2>Your promise card <br/>is almost ready</h2>
+            <div className="form-input">
+              <div className='input-group'>
+                  <label>Full name</label>
+                  <input type='text' name='name' placeholder='eg. Peter Obi' value={userDetails.name} required={true} onChange={updateUserDetails} />
+              </div>
+      
+              <div className='input-group'>
+                  <label>Email address</label>
+                  <input type='email' name='email' placeholder='Peter@gmail.com' value={userDetails.email} required={true} onChange={updateUserDetails} />
+              </div>
+            </div>
+            {emptyText && <p className="err-msg">Name/Email can't be empty</p>}
+            <div className="gen-btn">
+              <button onClick={handleSubmit} className='submit-btn'>Submit</button>
+            </div>
+        </div>
+      }
+   
+    </>
   )
 }
 

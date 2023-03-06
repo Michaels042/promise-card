@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useParams} from 'react-router-dom'
+import { Link, useParams} from 'react-router-dom'
 import "./App.css";
+import MoonLoader from 'react-spinners/MoonLoader';
+
 
 const Cards = () => {
     const { cardId } = useParams(); 
     const [response, setResponse] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const getCardData = async () => {
         try {
+            setIsLoading(true);
             //resolves fetch promise
             const res = await fetch(`https://promise-card-api.onrender.com/api/get-card/${cardId}`, {
             method: "GET",
@@ -21,11 +25,13 @@ const Cards = () => {
                 return
             }
             setResponse(jsonData)
+            setIsLoading(false)
             // previews response in the console
             console.log("theresp",jsonData);
 
         } catch (error) {
             console.error(error);
+            setIsLoading(false)
         }
 }
      useEffect(() => {
@@ -34,30 +40,29 @@ const Cards = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
-    <div>
-         {response !== "" ? 
-         <div id={`generatedScreen`}
+    <div className='caards'>
+        
+        {isLoading ?
+        <div  style={{
+            display: "flex",
+            justifyContent: "center",
+            position: "absolute",
+            top: "40%"
+          }} 
+          >
+             <MoonLoader color="#808080" /> 
+          </div>
+         : 
+         response !== "" ? 
+         <div className="caardsContent" id={`generatedScreen`}
          style={{
-          width: "400px",
-          height: "720px",
           backgroundColor: `${response.color}`,
-        }} 
-         >
-            <h2> Promise Card</h2>
+        }} >
             <h2>{response.name + `'s`} Promise Card</h2>
             <p className="subTitle">
               Things I want{" "}
-              <span
-                style={{
-                  backgroundColor: "#fff",
-                  borderRadius: "50%",
-                  width: "20.4px",
-                  height: "20.4px",
-                  padding: "4px 11px",
-                }}
-              >
+              <span>
                 {response.cardItems.length}
               </span>
             </p>
@@ -70,6 +75,11 @@ const Cards = () => {
                   </div>
               ))}
           </div>
+          <div className="linkWrap">
+        <Link to="https://caard.netlify.app"  className="create-link">
+          <p>Create your own Promisecard.com.ng</p>
+        </Link>
+      </div>
         </div>
          : 
          <div  style={{
@@ -83,7 +93,6 @@ const Cards = () => {
             <p>No info found</p>
          </div>
          }
-
     </div>
   )
 

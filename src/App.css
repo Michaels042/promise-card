@@ -10,7 +10,7 @@
 }
 .app-content {
 width: 400px;
-height: 720px;
+height: 700px;
 position: relative;
 margin: auto;
 text-align: center;
@@ -21,7 +21,7 @@ top: 0;
 left: 0;
 padding: 30px;
 z-index: 1;
-height: 720px;
+height: 700px;
 width: 400px;
 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 56.86%, rgba(0, 0, 0, 0.5) 100%);
 }
@@ -200,7 +200,7 @@ position: absolute;
 width: 400px;
 height: 120px;
 left: 0px;
-top: 600px;
+top: 580px;
 bottom: 0;
 background: #FFFFFF;
 border-radius: 16px 16px 0px 0px;
@@ -341,5 +341,25 @@ width: 32px;
     margin: 20px;
     height: 500px;
   }
-
+  .caards{
+    display: flex;
+    justify-content: center;
+  }
+  .caardsContent{
+    width: 390px;
+    height: 550px;
+  }
+  .caardsContent h2, p{
+    display: flex;
+    justify-content: center;
+  }
+  .caardsContent .subTitle span{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 1px 7px;
+    margin-left: 5px;
+  }
+ 
   
