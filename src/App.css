@@ -246,10 +246,10 @@ border: 1px solid #000;
     height: 37.67px;
     font-weight: 400;
     font-size: 13.5417px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(254, 250, 250, 0.8);
     text-decoration: none;
     top: 555px;
-    background: rgba(124, 122, 122, 0.1);
+    background: rgba(41, 40, 40, 0.1);
     border-radius: 21.6667px;
   }
   .create-link:hover {
